@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE
+        generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"
+        >
+<generatorConfiguration>
+    <context id="context" targetRuntime="MyBatis3">
+        <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--mysql数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://188.131.255.225:3306/airecycle?useUnicode=true&amp;characterEncoding=UTF8&amp;allowMultiQueries=true" userId="root" password="recycle1993"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.0.69:3306/ewfresh_advertisement?useUnicode=true&amp;characterEncoding=UTF8&amp;allowMultiQueries=true" userId="ylm" password="ylmpass"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.0.69:3306/ewfresh_pay?useUnicode=true&amp;characterEncoding=UTF8&amp;allowMultiQueries=true" userId="dev" password="123456"/>-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.0.69:3306/ewfresh_order?useUnicode=true&amp;characterEncoding=UTF8&amp;allowMultiQueries=true" userId="dev" password="123456"/>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.0.69:3306/ewfresh_product?useUnicode=true&amp;characterEncoding=UTF8&amp;allowMultiQueries=true" userId="dev" password="123456"/>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，
+        为 true时把JDBC DECIMAL和NUMERIC类型解析为java.math.BigDecimal
+        -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- targetProject:生成model类的位置 -->
+        <!--<javaModelGenerator targetPackage="cn.airecycle.model" targetProject=".\src\main\java">-->
+        <!--<javaModelGenerator targetPackage="com.ewfresh.advertisement.model" targetProject=".\src\main\java">-->
+        <!--<javaModelGenerator targetPackage="com.ewfresh.pay.model" targetProject=".\src\main\java">-->
+        <!--<javaModelGenerator targetPackage="com.ewfresh.order.model" targetProject=".\src\main\java">-->
+        <javaModelGenerator targetPackage="com.ewfresh.product.model" targetProject=".\src\main\java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- targetProject:mapper映射xml文件生成的位置 -->
+        <sqlMapGenerator targetPackage="sqlmapper" targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="cn.airecycle.dao" targetProject=".\src\main\java">-->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.ewfresh.advertisement.dao" targetProject=".\src\main\java">-->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.ewfresh.pay.dao" targetProject=".\src\main\java">-->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.ewfresh.order.dao" targetProject=".\src\main\java">-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ewfresh.product.dao" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 指定数据库表，要生成哪些表，就写哪些表，要和数据库中对应，不能写错！ -->
+        <!--t_help_center表的text、blob字段设置为varchar-->
+        <!--<table tableName="t_help_center" domainObjectName="HelpCenter"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <columnOverride column="answer" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </table>-->
+
+
+        <!--
+        <table tableName="t_ad" domainObjectName="Ad" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_detail_positions" domainObjectName="DetailPositions" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_refund_money_service" domainObjectName="RefundMoneyService" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        -->
+
+        <table tableName="t_pro_trace" domainObjectName="ProTrace" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+    </context>
+</generatorConfiguration>
