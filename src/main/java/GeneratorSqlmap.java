@@ -24,7 +24,7 @@ public class GeneratorSqlmap {
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,
                 callback, warnings);
-        myBatisGenerator.generate(null); 
+        myBatisGenerator.generate(null);
     }
 
     //生成逆向文件
