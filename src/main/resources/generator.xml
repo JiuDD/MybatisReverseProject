@@ -42,13 +42,13 @@
 
         <!-- 指定数据库表，要生成哪些表，就写哪些表，要和数据库中对应，不能写错！ -->
         <!--t_help_center表的text、blob字段设置为varchar-->
-        <table tableName="t_help_center" domainObjectName="HelpCenter"
+        <table tableName="t_dsl" domainObjectName="Dsl"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-            <columnOverride column="answer" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <columnOverride column="dsl" javaType="java.lang.String" jdbcType="VARCHAR"/>
         </table>
 
 
