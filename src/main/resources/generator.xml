@@ -91,7 +91,7 @@
 
 
         <!--普通的不需要把blob转换为String的表-->
-        <table tableName="t_parameter" domainObjectName="Parameter"
+        <table tableName="ce17_zmengzhu_data_detail" domainObjectName="ViewDetail"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"

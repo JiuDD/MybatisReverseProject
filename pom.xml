@@ -47,6 +47,12 @@
             <version>1.4.0</version>
         </dependency>
 
+        <!--clickHouse依赖-->
+        <dependency>
+            <groupId>ru.yandex.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
+            <version>0.1.53</version>
+        </dependency>
 
         <!--Swagger-UI API文档生产工具 并不是mybatis逆向工程需要的，这里引入，只是为了让生成的model类不会出现导包错误 start-->
         <dependency>
