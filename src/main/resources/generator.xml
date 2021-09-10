@@ -40,7 +40,7 @@
 
 
         <!--实体类定义-->
-        <javaModelGenerator targetPackage="com.macro.mall.model" targetProject=".\src\main\java">
+        <javaModelGenerator targetPackage="com.dadiyw.be01" targetProject=".\src\main\java">
             <!--是否对model添加构造函数-->
             <property name="constructorBased" value="false"/>
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
@@ -62,7 +62,7 @@
         <!--    type="ANNOTATEDMAPPER", 生成Java Model和基于注解的Mapper对象
                 type="MIXEDMAPPER", 生成基于注解的Java Model和相应的Mapper对象
                 type="XMLMAPPER", 生成SQLMap XML文件和独立的Mapper接口            -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.macro.mall.mapper" targetProject=".\src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dadiyw.be01" targetProject=".\src\main\java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
@@ -91,12 +91,22 @@
 
 
         <!--普通的不需要把blob转换为String的表-->
+        <!--ClickHouse表-->  <!--将字段转为驼峰-->
         <table tableName="ce17_zmengzhu_data_detail" domainObjectName="ViewDetail"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
-               enableSelectByExample="false"
+               enableSelectByExample="true"
                selectByExampleQueryId="false"></table>
 
+        <!--ClickHouse表-->  <!--不将字段转为驼峰，使用数据库的字段的原始命名-->
+        <table tableName="DM_BE01_REPORT_SEO_EQID" domainObjectName="ReportSeoEqid"
+               enableSelectByExample="true"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
     </context>
 </generatorConfiguration>
