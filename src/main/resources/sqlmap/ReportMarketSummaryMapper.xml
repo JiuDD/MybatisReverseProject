@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dadiyw.ce16.mapper.ReportMarketSummaryMapper">
+  <resultMap id="BaseResultMap" type="com.dadiyw.ce16.model.ReportMarketSummary">
+    <result column="DATA_DATE" jdbcType="DATE" property="DATA_DATE" />
+    <result column="MID_CODE" jdbcType="VARCHAR" property="MID_CODE" />
+    <result column="SHOP_CODE" jdbcType="VARCHAR" property="SHOP_CODE" />
+    <result column="oa_pay" jdbcType="DECIMAL" property="oa_pay" />
+    <result column="oa_mkpay" jdbcType="DECIMAL" property="oa_mkpay" />
+    <result column="oa_mkpay_sh" jdbcType="DECIMAL" property="oa_mkpay_sh" />
+    <result column="da_mkpay" jdbcType="DECIMAL" property="da_mkpay" />
+    <result column="roi_mkpay" jdbcType="DECIMAL" property="roi_mkpay" />
+    <result column="nc_mkpay" jdbcType="BIGINT" property="nc_mkpay" />
+    <result column="atv_mkpay" jdbcType="DECIMAL" property="atv_mkpay" />
+    <result column="act_nu_mkty" jdbcType="BIGINT" property="act_nu_mkty" />
+    <result column="act_nu_mkty_1" jdbcType="BIGINT" property="act_nu_mkty_1" />
+    <result column="act_nu_mkty_sh_1" jdbcType="DECIMAL" property="act_nu_mkty_sh_1" />
+    <result column="act_nu_mkty_2" jdbcType="BIGINT" property="act_nu_mkty_2" />
+    <result column="act_nu_mkty_sh_2" jdbcType="DECIMAL" property="act_nu_mkty_sh_2" />
+    <result column="act_nu_mkty_3" jdbcType="BIGINT" property="act_nu_mkty_3" />
+    <result column="act_nu_mkty_sh_3" jdbcType="DECIMAL" property="act_nu_mkty_sh_3" />
+    <result column="act_nu_mkty_4" jdbcType="BIGINT" property="act_nu_mkty_4" />
+    <result column="act_nu_mkty_sh_4" jdbcType="DECIMAL" property="act_nu_mkty_sh_4" />
+    <result column="act_nu_mkty_5" jdbcType="BIGINT" property="act_nu_mkty_5" />
+    <result column="act_nu_mkty_sh_5" jdbcType="DECIMAL" property="act_nu_mkty_sh_5" />
+    <result column="oa_unmkpay" jdbcType="DECIMAL" property="oa_unmkpay" />
+    <result column="old_nc_mkpay" jdbcType="BIGINT" property="old_nc_mkpay" />
+    <result column="new_nc_mkpay" jdbcType="BIGINT" property="new_nc_mkpay" />
+    <result column="sv_mkpay" jdbcType="BIGINT" property="sv_mkpay" />
+    <result column="oq_mkpay" jdbcType="BIGINT" property="oq_mkpay" />
+    <result column="apr_mkpay" jdbcType="DECIMAL" property="apr_mkpay" />
+    <result column="nc_mkpl" jdbcType="BIGINT" property="nc_mkpl" />
+    <result column="nc_mkpl_pay_co" jdbcType="DECIMAL" property="nc_mkpl_pay_co" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    DATA_DATE, MID_CODE, SHOP_CODE, oa_pay, oa_mkpay, oa_mkpay_sh, da_mkpay, roi_mkpay, 
+    nc_mkpay, atv_mkpay, act_nu_mkty, act_nu_mkty_1, act_nu_mkty_sh_1, act_nu_mkty_2, 
+    act_nu_mkty_sh_2, act_nu_mkty_3, act_nu_mkty_sh_3, act_nu_mkty_4, act_nu_mkty_sh_4, 
+    act_nu_mkty_5, act_nu_mkty_sh_5, oa_unmkpay, old_nc_mkpay, new_nc_mkpay, sv_mkpay, 
+    oq_mkpay, apr_mkpay, nc_mkpl, nc_mkpl_pay_co
+  </sql>
+  <select id="selectByExample" parameterType="com.dadiyw.ce16.model.ReportMarketSummaryExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from DM_CE16_REPORT_MARKET_SUMMARY
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <insert id="insert" parameterType="com.dadiyw.ce16.model.ReportMarketSummary">
+    insert into DM_CE16_REPORT_MARKET_SUMMARY (DATA_DATE, MID_CODE, SHOP_CODE, 
+      oa_pay, oa_mkpay, oa_mkpay_sh, 
+      da_mkpay, roi_mkpay, nc_mkpay, 
+      atv_mkpay, act_nu_mkty, act_nu_mkty_1, 
+      act_nu_mkty_sh_1, act_nu_mkty_2, act_nu_mkty_sh_2, 
+      act_nu_mkty_3, act_nu_mkty_sh_3, act_nu_mkty_4, 
+      act_nu_mkty_sh_4, act_nu_mkty_5, act_nu_mkty_sh_5, 
+      oa_unmkpay, old_nc_mkpay, new_nc_mkpay, 
+      sv_mkpay, oq_mkpay, apr_mkpay, 
+      nc_mkpl, nc_mkpl_pay_co)
+    values (#{DATA_DATE,jdbcType=DATE}, #{MID_CODE,jdbcType=VARCHAR}, #{SHOP_CODE,jdbcType=VARCHAR}, 
+      #{oa_pay,jdbcType=DECIMAL}, #{oa_mkpay,jdbcType=DECIMAL}, #{oa_mkpay_sh,jdbcType=DECIMAL}, 
+      #{da_mkpay,jdbcType=DECIMAL}, #{roi_mkpay,jdbcType=DECIMAL}, #{nc_mkpay,jdbcType=BIGINT}, 
+      #{atv_mkpay,jdbcType=DECIMAL}, #{act_nu_mkty,jdbcType=BIGINT}, #{act_nu_mkty_1,jdbcType=BIGINT}, 
+      #{act_nu_mkty_sh_1,jdbcType=DECIMAL}, #{act_nu_mkty_2,jdbcType=BIGINT}, #{act_nu_mkty_sh_2,jdbcType=DECIMAL}, 
+      #{act_nu_mkty_3,jdbcType=BIGINT}, #{act_nu_mkty_sh_3,jdbcType=DECIMAL}, #{act_nu_mkty_4,jdbcType=BIGINT}, 
+      #{act_nu_mkty_sh_4,jdbcType=DECIMAL}, #{act_nu_mkty_5,jdbcType=BIGINT}, #{act_nu_mkty_sh_5,jdbcType=DECIMAL}, 
+      #{oa_unmkpay,jdbcType=DECIMAL}, #{old_nc_mkpay,jdbcType=BIGINT}, #{new_nc_mkpay,jdbcType=BIGINT}, 
+      #{sv_mkpay,jdbcType=BIGINT}, #{oq_mkpay,jdbcType=BIGINT}, #{apr_mkpay,jdbcType=DECIMAL}, 
+      #{nc_mkpl,jdbcType=BIGINT}, #{nc_mkpl_pay_co,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dadiyw.ce16.model.ReportMarketSummary">
+    insert into DM_CE16_REPORT_MARKET_SUMMARY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="DATA_DATE != null">
+        DATA_DATE,
+      </if>
+      <if test="MID_CODE != null">
+        MID_CODE,
+      </if>
+      <if test="SHOP_CODE != null">
+        SHOP_CODE,
+      </if>
+      <if test="oa_pay != null">
+        oa_pay,
+      </if>
+      <if test="oa_mkpay != null">
+        oa_mkpay,
+      </if>
+      <if test="oa_mkpay_sh != null">
+        oa_mkpay_sh,
+      </if>
+      <if test="da_mkpay != null">
+        da_mkpay,
+      </if>
+      <if test="roi_mkpay != null">
+        roi_mkpay,
+      </if>
+      <if test="nc_mkpay != null">
+        nc_mkpay,
+      </if>
+      <if test="atv_mkpay != null">
+        atv_mkpay,
+      </if>
+      <if test="act_nu_mkty != null">
+        act_nu_mkty,
+      </if>
+      <if test="act_nu_mkty_1 != null">
+        act_nu_mkty_1,
+      </if>
+      <if test="act_nu_mkty_sh_1 != null">
+        act_nu_mkty_sh_1,
+      </if>
+      <if test="act_nu_mkty_2 != null">
+        act_nu_mkty_2,
+      </if>
+      <if test="act_nu_mkty_sh_2 != null">
+        act_nu_mkty_sh_2,
+      </if>
+      <if test="act_nu_mkty_3 != null">
+        act_nu_mkty_3,
+      </if>
+      <if test="act_nu_mkty_sh_3 != null">
+        act_nu_mkty_sh_3,
+      </if>
+      <if test="act_nu_mkty_4 != null">
+        act_nu_mkty_4,
+      </if>
+      <if test="act_nu_mkty_sh_4 != null">
+        act_nu_mkty_sh_4,
+      </if>
+      <if test="act_nu_mkty_5 != null">
+        act_nu_mkty_5,
+      </if>
+      <if test="act_nu_mkty_sh_5 != null">
+        act_nu_mkty_sh_5,
+      </if>
+      <if test="oa_unmkpay != null">
+        oa_unmkpay,
+      </if>
+      <if test="old_nc_mkpay != null">
+        old_nc_mkpay,
+      </if>
+      <if test="new_nc_mkpay != null">
+        new_nc_mkpay,
+      </if>
+      <if test="sv_mkpay != null">
+        sv_mkpay,
+      </if>
+      <if test="oq_mkpay != null">
+        oq_mkpay,
+      </if>
+      <if test="apr_mkpay != null">
+        apr_mkpay,
+      </if>
+      <if test="nc_mkpl != null">
+        nc_mkpl,
+      </if>
+      <if test="nc_mkpl_pay_co != null">
+        nc_mkpl_pay_co,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="DATA_DATE != null">
+        #{DATA_DATE,jdbcType=DATE},
+      </if>
+      <if test="MID_CODE != null">
+        #{MID_CODE,jdbcType=VARCHAR},
+      </if>
+      <if test="SHOP_CODE != null">
+        #{SHOP_CODE,jdbcType=VARCHAR},
+      </if>
+      <if test="oa_pay != null">
+        #{oa_pay,jdbcType=DECIMAL},
+      </if>
+      <if test="oa_mkpay != null">
+        #{oa_mkpay,jdbcType=DECIMAL},
+      </if>
+      <if test="oa_mkpay_sh != null">
+        #{oa_mkpay_sh,jdbcType=DECIMAL},
+      </if>
+      <if test="da_mkpay != null">
+        #{da_mkpay,jdbcType=DECIMAL},
+      </if>
+      <if test="roi_mkpay != null">
+        #{roi_mkpay,jdbcType=DECIMAL},
+      </if>
+      <if test="nc_mkpay != null">
+        #{nc_mkpay,jdbcType=BIGINT},
+      </if>
+      <if test="atv_mkpay != null">
+        #{atv_mkpay,jdbcType=DECIMAL},
+      </if>
+      <if test="act_nu_mkty != null">
+        #{act_nu_mkty,jdbcType=BIGINT},
+      </if>
+      <if test="act_nu_mkty_1 != null">
+        #{act_nu_mkty_1,jdbcType=BIGINT},
+      </if>
+      <if test="act_nu_mkty_sh_1 != null">
+        #{act_nu_mkty_sh_1,jdbcType=DECIMAL},
+      </if>
+      <if test="act_nu_mkty_2 != null">
+        #{act_nu_mkty_2,jdbcType=BIGINT},
+      </if>
+      <if test="act_nu_mkty_sh_2 != null">
+        #{act_nu_mkty_sh_2,jdbcType=DECIMAL},
+      </if>
+      <if test="act_nu_mkty_3 != null">
+        #{act_nu_mkty_3,jdbcType=BIGINT},
+      </if>
+      <if test="act_nu_mkty_sh_3 != null">
+        #{act_nu_mkty_sh_3,jdbcType=DECIMAL},
+      </if>
+      <if test="act_nu_mkty_4 != null">
+        #{act_nu_mkty_4,jdbcType=BIGINT},
+      </if>
+      <if test="act_nu_mkty_sh_4 != null">
+        #{act_nu_mkty_sh_4,jdbcType=DECIMAL},
+      </if>
+      <if test="act_nu_mkty_5 != null">
+        #{act_nu_mkty_5,jdbcType=BIGINT},
+      </if>
+      <if test="act_nu_mkty_sh_5 != null">
+        #{act_nu_mkty_sh_5,jdbcType=DECIMAL},
+      </if>
+      <if test="oa_unmkpay != null">
+        #{oa_unmkpay,jdbcType=DECIMAL},
+      </if>
+      <if test="old_nc_mkpay != null">
+        #{old_nc_mkpay,jdbcType=BIGINT},
+      </if>
+      <if test="new_nc_mkpay != null">
+        #{new_nc_mkpay,jdbcType=BIGINT},
+      </if>
+      <if test="sv_mkpay != null">
+        #{sv_mkpay,jdbcType=BIGINT},
+      </if>
+      <if test="oq_mkpay != null">
+        #{oq_mkpay,jdbcType=BIGINT},
+      </if>
+      <if test="apr_mkpay != null">
+        #{apr_mkpay,jdbcType=DECIMAL},
+      </if>
+      <if test="nc_mkpl != null">
+        #{nc_mkpl,jdbcType=BIGINT},
+      </if>
+      <if test="nc_mkpl_pay_co != null">
+        #{nc_mkpl_pay_co,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

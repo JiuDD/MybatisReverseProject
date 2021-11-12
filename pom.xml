@@ -47,11 +47,11 @@
             <version>1.4.0</version>
         </dependency>
 
-        <!--clickHouse依赖-->
+        <!--clickHouse依赖        2021年11月12日 升级至此0.3.1版本，修正连接ClickHouse后读取不到字段注释，导致swagger字段文档失败的问题-->
         <dependency>
             <groupId>ru.yandex.clickhouse</groupId>
             <artifactId>clickhouse-jdbc</artifactId>
-            <version>0.1.53</version>
+            <version>0.3.1</version>
         </dependency>
 
         <!--Swagger-UI API文档生产工具 并不是mybatis逆向工程需要的，这里引入，只是为了让生成的model类不会出现导包错误 start-->
@@ -68,13 +68,20 @@
         <!--Swagger-UI API文档生产工具 并不是mybatis逆向工程需要的，这里引入，只是为了让生成的model类不会出现导包错误 end-->
 
 
-      <!--mybatis的jar也不是必须的，只是为了让生成的注解类型的mapper文件里，引入的mybatis的注解不会报错  start-->
+        <!--mybatis的jar也不是必须的，只是为了让生成的注解类型的mapper文件里，引入的mybatis的注解不会报错  start-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.3.2</version>
         </dependency>
-      <!--mybatis的jar也不是必须的，只是为了让生成的注解类型的mapper文件里，引入的mybatis的注解不会报错  end-->
+        <!--mybatis的jar也不是必须的，只是为了让生成的注解类型的mapper文件里，引入的mybatis的注解不会报错  end-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
