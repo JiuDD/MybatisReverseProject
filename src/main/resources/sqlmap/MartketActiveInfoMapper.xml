@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dadiyw.ce16.mapper.MartketActiveInfoMapper">
+  <resultMap id="BaseResultMap" type="com.dadiyw.ce16.model.MartketActiveInfo">
+    <result column="MID_CODE" jdbcType="VARCHAR" property="midCode" />
+    <result column="SHOP_CODE" jdbcType="VARCHAR" property="shopCode" />
+    <result column="ACTIVE_CODE" jdbcType="VARCHAR" property="activeCode" />
+    <result column="MARKET_ACTIVE_TYPE" jdbcType="VARCHAR" property="marketActiveType" />
+    <result column="START_DATE" jdbcType="DATE" property="startDate" />
+    <result column="END_DATE" jdbcType="DATE" property="endDate" />
+    <result column="ACTIVE_STATUS" jdbcType="VARCHAR" property="activeStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    MID_CODE, SHOP_CODE, ACTIVE_CODE, MARKET_ACTIVE_TYPE, START_DATE, END_DATE, ACTIVE_STATUS
+  </sql>
+  <select id="selectByExample" parameterType="com.dadiyw.ce16.model.MartketActiveInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from DW_CE16_MARTKET_ACTIVE_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <insert id="insert" parameterType="com.dadiyw.ce16.model.MartketActiveInfo">
+    insert into DW_CE16_MARTKET_ACTIVE_INFO (MID_CODE, SHOP_CODE, ACTIVE_CODE, 
+      MARKET_ACTIVE_TYPE, START_DATE, END_DATE, 
+      ACTIVE_STATUS)
+    values (#{midCode,jdbcType=VARCHAR}, #{shopCode,jdbcType=VARCHAR}, #{activeCode,jdbcType=VARCHAR}, 
+      #{marketActiveType,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, 
+      #{activeStatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dadiyw.ce16.model.MartketActiveInfo">
+    insert into DW_CE16_MARTKET_ACTIVE_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="midCode != null">
+        MID_CODE,
+      </if>
+      <if test="shopCode != null">
+        SHOP_CODE,
+      </if>
+      <if test="activeCode != null">
+        ACTIVE_CODE,
+      </if>
+      <if test="marketActiveType != null">
+        MARKET_ACTIVE_TYPE,
+      </if>
+      <if test="startDate != null">
+        START_DATE,
+      </if>
+      <if test="endDate != null">
+        END_DATE,
+      </if>
+      <if test="activeStatus != null">
+        ACTIVE_STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="midCode != null">
+        #{midCode,jdbcType=VARCHAR},
+      </if>
+      <if test="shopCode != null">
+        #{shopCode,jdbcType=VARCHAR},
+      </if>
+      <if test="activeCode != null">
+        #{activeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="marketActiveType != null">
+        #{marketActiveType,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="activeStatus != null">
+        #{activeStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

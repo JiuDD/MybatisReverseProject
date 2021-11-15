@@ -91,24 +91,24 @@
 
 
         <!--普通的不需要把blob转换为String的表-->
-        <!--ClickHouse表-->  <!--将字段转为驼峰-->
+        <!--ClickHouse表-->  <!--不将字段转为驼峰，使用数据库的字段的原始命名-->
         <table tableName="ce17_zmengzhu_data_detail" domainObjectName="ViewDetail"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="true"
                selectByExampleQueryId="false">
+
+            <property name="useActualColumnNames" value="true"/>
         </table>
 
-        <!--ClickHouse表-->  <!--不将字段转为驼峰，使用数据库的字段的原始命名-->
+        <!--ClickHouse表-->  <!--将字段转为驼峰-->
         <table tableName="${tableName}" domainObjectName="${modelName}"
                enableSelectByExample="true"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                selectByExampleQueryId="false">
-
-            <property name="useActualColumnNames" value="true"/>
 
         </table>
     </context>

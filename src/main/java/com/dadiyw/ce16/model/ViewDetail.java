@@ -19,236 +19,236 @@ import lombok.Data;
 @Data
 public class ViewDetail implements Serializable {
     @ApiModelProperty(value = "成功为200")
-    private String code;
+    private String CODE;
 
     @ApiModelProperty(value = "成功返回ok")
-    private String msg;
+    private String MSG;
 
     @ApiModelProperty(value = "频道ID")
-    private String channelId;
+    private String CHANNEL_ID;
 
     @ApiModelProperty(value = "活动ID")
-    private String webinarId;
+    private String WEBINAR_ID;
 
     @ApiModelProperty(value = "用户ID")
-    private String uid;
+    private String UID;
 
     @ApiModelProperty(value = "首次进入时间")
-    private String joinTime;
+    private String JOIN_TIME;
 
     @ApiModelProperty(value = "最后离开时间")
-    private String leaveTime;
+    private String LEAVE_TIME;
 
     @ApiModelProperty(value = "累计观看时长")
-    private String duration;
+    private String DURATION;
 
     @ApiModelProperty(value = "访问IP")
-    private String ip;
+    private String IP;
 
     @ApiModelProperty(value = "观看终端")
-    private String platform;
+    private String PLATFORM;
 
     @ApiModelProperty(value = "地理位置")
-    private String area;
+    private String AREA;
 
     @ApiModelProperty(value = "创建时间")
-    private String createdAt;
+    private String CREATED_AT;
 
     @ApiModelProperty(value = "活动开始时间")
-    private String webinarStartTime;
+    private String WEBINAR_START_TIME;
 
     @ApiModelProperty(value = "邀请用户")
-    private String inviteUid;
+    private String INVITE_UID;
 
     @ApiModelProperty(value = "邀请用户")
-    private String inviteNickname;
+    private String INVITE_NICKNAME;
 
     @ApiModelProperty(value = "昵称")
-    private String nickname;
+    private String NICKNAME;
 
     @ApiModelProperty(value = "手机号")
-    private String phone;
+    private String PHONE;
 
     @ApiModelProperty(value = "初始化第三方用户标识")
-    private String originUniqueId;
+    private String ORIGIN_UNIQUE_ID;
 
     @ApiModelProperty(value = "总量")
-    private String total;
+    private String TOTAL;
 
     @ApiModelProperty(value = "接口类型1直播2回放")
-    private String apiType;
+    private String API_TYPE;
 
     @ApiModelProperty(value = "数据中心数据抽取入库时间")
-    private Date datacenterInsertTime;
+    private Date DATACENTER_INSERT_TIME;
 
     private static final long serialVersionUID = 1L;
 
-    public String getCode() {
-        return code;
+    public String getCODE() {
+        return CODE;
     }
 
-    public void setCode(String code) {
-        this.code = code == null ? null : code.trim();
+    public void setCODE(String CODE) {
+        this.CODE = CODE == null ? null : CODE.trim();
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMSG() {
+        return MSG;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg == null ? null : msg.trim();
+    public void setMSG(String MSG) {
+        this.MSG = MSG == null ? null : MSG.trim();
     }
 
-    public String getChannelId() {
-        return channelId;
+    public String getCHANNEL_ID() {
+        return CHANNEL_ID;
     }
 
-    public void setChannelId(String channelId) {
-        this.channelId = channelId == null ? null : channelId.trim();
+    public void setCHANNEL_ID(String CHANNEL_ID) {
+        this.CHANNEL_ID = CHANNEL_ID == null ? null : CHANNEL_ID.trim();
     }
 
-    public String getWebinarId() {
-        return webinarId;
+    public String getWEBINAR_ID() {
+        return WEBINAR_ID;
     }
 
-    public void setWebinarId(String webinarId) {
-        this.webinarId = webinarId == null ? null : webinarId.trim();
+    public void setWEBINAR_ID(String WEBINAR_ID) {
+        this.WEBINAR_ID = WEBINAR_ID == null ? null : WEBINAR_ID.trim();
     }
 
-    public String getUid() {
-        return uid;
+    public String getUID() {
+        return UID;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid == null ? null : uid.trim();
+    public void setUID(String UID) {
+        this.UID = UID == null ? null : UID.trim();
     }
 
-    public String getJoinTime() {
-        return joinTime;
+    public String getJOIN_TIME() {
+        return JOIN_TIME;
     }
 
-    public void setJoinTime(String joinTime) {
-        this.joinTime = joinTime == null ? null : joinTime.trim();
+    public void setJOIN_TIME(String JOIN_TIME) {
+        this.JOIN_TIME = JOIN_TIME == null ? null : JOIN_TIME.trim();
     }
 
-    public String getLeaveTime() {
-        return leaveTime;
+    public String getLEAVE_TIME() {
+        return LEAVE_TIME;
     }
 
-    public void setLeaveTime(String leaveTime) {
-        this.leaveTime = leaveTime == null ? null : leaveTime.trim();
+    public void setLEAVE_TIME(String LEAVE_TIME) {
+        this.LEAVE_TIME = LEAVE_TIME == null ? null : LEAVE_TIME.trim();
     }
 
-    public String getDuration() {
-        return duration;
+    public String getDURATION() {
+        return DURATION;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration == null ? null : duration.trim();
+    public void setDURATION(String DURATION) {
+        this.DURATION = DURATION == null ? null : DURATION.trim();
     }
 
-    public String getIp() {
-        return ip;
+    public String getIP() {
+        return IP;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip == null ? null : ip.trim();
+    public void setIP(String IP) {
+        this.IP = IP == null ? null : IP.trim();
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPLATFORM() {
+        return PLATFORM;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform == null ? null : platform.trim();
+    public void setPLATFORM(String PLATFORM) {
+        this.PLATFORM = PLATFORM == null ? null : PLATFORM.trim();
     }
 
-    public String getArea() {
-        return area;
+    public String getAREA() {
+        return AREA;
     }
 
-    public void setArea(String area) {
-        this.area = area == null ? null : area.trim();
+    public void setAREA(String AREA) {
+        this.AREA = AREA == null ? null : AREA.trim();
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public String getCREATED_AT() {
+        return CREATED_AT;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt == null ? null : createdAt.trim();
+    public void setCREATED_AT(String CREATED_AT) {
+        this.CREATED_AT = CREATED_AT == null ? null : CREATED_AT.trim();
     }
 
-    public String getWebinarStartTime() {
-        return webinarStartTime;
+    public String getWEBINAR_START_TIME() {
+        return WEBINAR_START_TIME;
     }
 
-    public void setWebinarStartTime(String webinarStartTime) {
-        this.webinarStartTime = webinarStartTime == null ? null : webinarStartTime.trim();
+    public void setWEBINAR_START_TIME(String WEBINAR_START_TIME) {
+        this.WEBINAR_START_TIME = WEBINAR_START_TIME == null ? null : WEBINAR_START_TIME.trim();
     }
 
-    public String getInviteUid() {
-        return inviteUid;
+    public String getINVITE_UID() {
+        return INVITE_UID;
     }
 
-    public void setInviteUid(String inviteUid) {
-        this.inviteUid = inviteUid == null ? null : inviteUid.trim();
+    public void setINVITE_UID(String INVITE_UID) {
+        this.INVITE_UID = INVITE_UID == null ? null : INVITE_UID.trim();
     }
 
-    public String getInviteNickname() {
-        return inviteNickname;
+    public String getINVITE_NICKNAME() {
+        return INVITE_NICKNAME;
     }
 
-    public void setInviteNickname(String inviteNickname) {
-        this.inviteNickname = inviteNickname == null ? null : inviteNickname.trim();
+    public void setINVITE_NICKNAME(String INVITE_NICKNAME) {
+        this.INVITE_NICKNAME = INVITE_NICKNAME == null ? null : INVITE_NICKNAME.trim();
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getNICKNAME() {
+        return NICKNAME;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
+    public void setNICKNAME(String NICKNAME) {
+        this.NICKNAME = NICKNAME == null ? null : NICKNAME.trim();
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPHONE() {
+        return PHONE;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setPHONE(String PHONE) {
+        this.PHONE = PHONE == null ? null : PHONE.trim();
     }
 
-    public String getOriginUniqueId() {
-        return originUniqueId;
+    public String getORIGIN_UNIQUE_ID() {
+        return ORIGIN_UNIQUE_ID;
     }
 
-    public void setOriginUniqueId(String originUniqueId) {
-        this.originUniqueId = originUniqueId == null ? null : originUniqueId.trim();
+    public void setORIGIN_UNIQUE_ID(String ORIGIN_UNIQUE_ID) {
+        this.ORIGIN_UNIQUE_ID = ORIGIN_UNIQUE_ID == null ? null : ORIGIN_UNIQUE_ID.trim();
     }
 
-    public String getTotal() {
-        return total;
+    public String getTOTAL() {
+        return TOTAL;
     }
 
-    public void setTotal(String total) {
-        this.total = total == null ? null : total.trim();
+    public void setTOTAL(String TOTAL) {
+        this.TOTAL = TOTAL == null ? null : TOTAL.trim();
     }
 
-    public String getApiType() {
-        return apiType;
+    public String getAPI_TYPE() {
+        return API_TYPE;
     }
 
-    public void setApiType(String apiType) {
-        this.apiType = apiType == null ? null : apiType.trim();
+    public void setAPI_TYPE(String API_TYPE) {
+        this.API_TYPE = API_TYPE == null ? null : API_TYPE.trim();
     }
 
-    public Date getDatacenterInsertTime() {
-        return datacenterInsertTime;
+    public Date getDATACENTER_INSERT_TIME() {
+        return DATACENTER_INSERT_TIME;
     }
 
-    public void setDatacenterInsertTime(Date datacenterInsertTime) {
-        this.datacenterInsertTime = datacenterInsertTime;
+    public void setDATACENTER_INSERT_TIME(Date DATACENTER_INSERT_TIME) {
+        this.DATACENTER_INSERT_TIME = DATACENTER_INSERT_TIME;
     }
 
     @Override
@@ -257,27 +257,27 @@ public class ViewDetail implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", code=").append(code);
-        sb.append(", msg=").append(msg);
-        sb.append(", channelId=").append(channelId);
-        sb.append(", webinarId=").append(webinarId);
-        sb.append(", uid=").append(uid);
-        sb.append(", joinTime=").append(joinTime);
-        sb.append(", leaveTime=").append(leaveTime);
-        sb.append(", duration=").append(duration);
-        sb.append(", ip=").append(ip);
-        sb.append(", platform=").append(platform);
-        sb.append(", area=").append(area);
-        sb.append(", createdAt=").append(createdAt);
-        sb.append(", webinarStartTime=").append(webinarStartTime);
-        sb.append(", inviteUid=").append(inviteUid);
-        sb.append(", inviteNickname=").append(inviteNickname);
-        sb.append(", nickname=").append(nickname);
-        sb.append(", phone=").append(phone);
-        sb.append(", originUniqueId=").append(originUniqueId);
-        sb.append(", total=").append(total);
-        sb.append(", apiType=").append(apiType);
-        sb.append(", datacenterInsertTime=").append(datacenterInsertTime);
+        sb.append(", CODE=").append(CODE);
+        sb.append(", MSG=").append(MSG);
+        sb.append(", CHANNEL_ID=").append(CHANNEL_ID);
+        sb.append(", WEBINAR_ID=").append(WEBINAR_ID);
+        sb.append(", UID=").append(UID);
+        sb.append(", JOIN_TIME=").append(JOIN_TIME);
+        sb.append(", LEAVE_TIME=").append(LEAVE_TIME);
+        sb.append(", DURATION=").append(DURATION);
+        sb.append(", IP=").append(IP);
+        sb.append(", PLATFORM=").append(PLATFORM);
+        sb.append(", AREA=").append(AREA);
+        sb.append(", CREATED_AT=").append(CREATED_AT);
+        sb.append(", WEBINAR_START_TIME=").append(WEBINAR_START_TIME);
+        sb.append(", INVITE_UID=").append(INVITE_UID);
+        sb.append(", INVITE_NICKNAME=").append(INVITE_NICKNAME);
+        sb.append(", NICKNAME=").append(NICKNAME);
+        sb.append(", PHONE=").append(PHONE);
+        sb.append(", ORIGIN_UNIQUE_ID=").append(ORIGIN_UNIQUE_ID);
+        sb.append(", TOTAL=").append(TOTAL);
+        sb.append(", API_TYPE=").append(API_TYPE);
+        sb.append(", DATACENTER_INSERT_TIME=").append(DATACENTER_INSERT_TIME);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

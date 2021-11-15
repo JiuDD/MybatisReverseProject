@@ -2,27 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dadiyw.ce16.mapper.ViewDetailMapper">
   <resultMap id="BaseResultMap" type="com.dadiyw.ce16.model.ViewDetail">
-    <result column="CODE" jdbcType="VARCHAR" property="code" />
-    <result column="MSG" jdbcType="VARCHAR" property="msg" />
-    <result column="CHANNEL_ID" jdbcType="VARCHAR" property="channelId" />
-    <result column="WEBINAR_ID" jdbcType="VARCHAR" property="webinarId" />
-    <result column="UID" jdbcType="VARCHAR" property="uid" />
-    <result column="JOIN_TIME" jdbcType="VARCHAR" property="joinTime" />
-    <result column="LEAVE_TIME" jdbcType="VARCHAR" property="leaveTime" />
-    <result column="DURATION" jdbcType="VARCHAR" property="duration" />
-    <result column="IP" jdbcType="VARCHAR" property="ip" />
-    <result column="PLATFORM" jdbcType="VARCHAR" property="platform" />
-    <result column="AREA" jdbcType="VARCHAR" property="area" />
-    <result column="CREATED_AT" jdbcType="VARCHAR" property="createdAt" />
-    <result column="WEBINAR_START_TIME" jdbcType="VARCHAR" property="webinarStartTime" />
-    <result column="INVITE_UID" jdbcType="VARCHAR" property="inviteUid" />
-    <result column="INVITE_NICKNAME" jdbcType="VARCHAR" property="inviteNickname" />
-    <result column="NICKNAME" jdbcType="VARCHAR" property="nickname" />
-    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
-    <result column="ORIGIN_UNIQUE_ID" jdbcType="VARCHAR" property="originUniqueId" />
-    <result column="TOTAL" jdbcType="VARCHAR" property="total" />
-    <result column="API_TYPE" jdbcType="VARCHAR" property="apiType" />
-    <result column="DATACENTER_INSERT_TIME" jdbcType="TIMESTAMP" property="datacenterInsertTime" />
+    <result column="CODE" jdbcType="VARCHAR" property="CODE" />
+    <result column="MSG" jdbcType="VARCHAR" property="MSG" />
+    <result column="CHANNEL_ID" jdbcType="VARCHAR" property="CHANNEL_ID" />
+    <result column="WEBINAR_ID" jdbcType="VARCHAR" property="WEBINAR_ID" />
+    <result column="UID" jdbcType="VARCHAR" property="UID" />
+    <result column="JOIN_TIME" jdbcType="VARCHAR" property="JOIN_TIME" />
+    <result column="LEAVE_TIME" jdbcType="VARCHAR" property="LEAVE_TIME" />
+    <result column="DURATION" jdbcType="VARCHAR" property="DURATION" />
+    <result column="IP" jdbcType="VARCHAR" property="IP" />
+    <result column="PLATFORM" jdbcType="VARCHAR" property="PLATFORM" />
+    <result column="AREA" jdbcType="VARCHAR" property="AREA" />
+    <result column="CREATED_AT" jdbcType="VARCHAR" property="CREATED_AT" />
+    <result column="WEBINAR_START_TIME" jdbcType="VARCHAR" property="WEBINAR_START_TIME" />
+    <result column="INVITE_UID" jdbcType="VARCHAR" property="INVITE_UID" />
+    <result column="INVITE_NICKNAME" jdbcType="VARCHAR" property="INVITE_NICKNAME" />
+    <result column="NICKNAME" jdbcType="VARCHAR" property="NICKNAME" />
+    <result column="PHONE" jdbcType="VARCHAR" property="PHONE" />
+    <result column="ORIGIN_UNIQUE_ID" jdbcType="VARCHAR" property="ORIGIN_UNIQUE_ID" />
+    <result column="TOTAL" jdbcType="VARCHAR" property="TOTAL" />
+    <result column="API_TYPE" jdbcType="VARCHAR" property="API_TYPE" />
+    <result column="DATACENTER_INSERT_TIME" jdbcType="TIMESTAMP" property="DATACENTER_INSERT_TIME" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -82,145 +82,145 @@
       NICKNAME, PHONE, ORIGIN_UNIQUE_ID, 
       TOTAL, API_TYPE, DATACENTER_INSERT_TIME
       )
-    values (#{code,jdbcType=VARCHAR}, #{msg,jdbcType=VARCHAR}, #{channelId,jdbcType=VARCHAR}, 
-      #{webinarId,jdbcType=VARCHAR}, #{uid,jdbcType=VARCHAR}, #{joinTime,jdbcType=VARCHAR}, 
-      #{leaveTime,jdbcType=VARCHAR}, #{duration,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
-      #{platform,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{createdAt,jdbcType=VARCHAR}, 
-      #{webinarStartTime,jdbcType=VARCHAR}, #{inviteUid,jdbcType=VARCHAR}, #{inviteNickname,jdbcType=VARCHAR}, 
-      #{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{originUniqueId,jdbcType=VARCHAR}, 
-      #{total,jdbcType=VARCHAR}, #{apiType,jdbcType=VARCHAR}, #{datacenterInsertTime,jdbcType=TIMESTAMP}
+    values (#{CODE,jdbcType=VARCHAR}, #{MSG,jdbcType=VARCHAR}, #{CHANNEL_ID,jdbcType=VARCHAR}, 
+      #{WEBINAR_ID,jdbcType=VARCHAR}, #{UID,jdbcType=VARCHAR}, #{JOIN_TIME,jdbcType=VARCHAR}, 
+      #{LEAVE_TIME,jdbcType=VARCHAR}, #{DURATION,jdbcType=VARCHAR}, #{IP,jdbcType=VARCHAR}, 
+      #{PLATFORM,jdbcType=VARCHAR}, #{AREA,jdbcType=VARCHAR}, #{CREATED_AT,jdbcType=VARCHAR}, 
+      #{WEBINAR_START_TIME,jdbcType=VARCHAR}, #{INVITE_UID,jdbcType=VARCHAR}, #{INVITE_NICKNAME,jdbcType=VARCHAR}, 
+      #{NICKNAME,jdbcType=VARCHAR}, #{PHONE,jdbcType=VARCHAR}, #{ORIGIN_UNIQUE_ID,jdbcType=VARCHAR}, 
+      #{TOTAL,jdbcType=VARCHAR}, #{API_TYPE,jdbcType=VARCHAR}, #{DATACENTER_INSERT_TIME,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.dadiyw.ce16.model.ViewDetail">
     insert into ce17_zmengzhu_data_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="code != null">
+      <if test="CODE != null">
         CODE,
       </if>
-      <if test="msg != null">
+      <if test="MSG != null">
         MSG,
       </if>
-      <if test="channelId != null">
+      <if test="CHANNEL_ID != null">
         CHANNEL_ID,
       </if>
-      <if test="webinarId != null">
+      <if test="WEBINAR_ID != null">
         WEBINAR_ID,
       </if>
-      <if test="uid != null">
+      <if test="UID != null">
         UID,
       </if>
-      <if test="joinTime != null">
+      <if test="JOIN_TIME != null">
         JOIN_TIME,
       </if>
-      <if test="leaveTime != null">
+      <if test="LEAVE_TIME != null">
         LEAVE_TIME,
       </if>
-      <if test="duration != null">
+      <if test="DURATION != null">
         DURATION,
       </if>
-      <if test="ip != null">
+      <if test="IP != null">
         IP,
       </if>
-      <if test="platform != null">
+      <if test="PLATFORM != null">
         PLATFORM,
       </if>
-      <if test="area != null">
+      <if test="AREA != null">
         AREA,
       </if>
-      <if test="createdAt != null">
+      <if test="CREATED_AT != null">
         CREATED_AT,
       </if>
-      <if test="webinarStartTime != null">
+      <if test="WEBINAR_START_TIME != null">
         WEBINAR_START_TIME,
       </if>
-      <if test="inviteUid != null">
+      <if test="INVITE_UID != null">
         INVITE_UID,
       </if>
-      <if test="inviteNickname != null">
+      <if test="INVITE_NICKNAME != null">
         INVITE_NICKNAME,
       </if>
-      <if test="nickname != null">
+      <if test="NICKNAME != null">
         NICKNAME,
       </if>
-      <if test="phone != null">
+      <if test="PHONE != null">
         PHONE,
       </if>
-      <if test="originUniqueId != null">
+      <if test="ORIGIN_UNIQUE_ID != null">
         ORIGIN_UNIQUE_ID,
       </if>
-      <if test="total != null">
+      <if test="TOTAL != null">
         TOTAL,
       </if>
-      <if test="apiType != null">
+      <if test="API_TYPE != null">
         API_TYPE,
       </if>
-      <if test="datacenterInsertTime != null">
+      <if test="DATACENTER_INSERT_TIME != null">
         DATACENTER_INSERT_TIME,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="code != null">
-        #{code,jdbcType=VARCHAR},
+      <if test="CODE != null">
+        #{CODE,jdbcType=VARCHAR},
       </if>
-      <if test="msg != null">
-        #{msg,jdbcType=VARCHAR},
+      <if test="MSG != null">
+        #{MSG,jdbcType=VARCHAR},
       </if>
-      <if test="channelId != null">
-        #{channelId,jdbcType=VARCHAR},
+      <if test="CHANNEL_ID != null">
+        #{CHANNEL_ID,jdbcType=VARCHAR},
       </if>
-      <if test="webinarId != null">
-        #{webinarId,jdbcType=VARCHAR},
+      <if test="WEBINAR_ID != null">
+        #{WEBINAR_ID,jdbcType=VARCHAR},
       </if>
-      <if test="uid != null">
-        #{uid,jdbcType=VARCHAR},
+      <if test="UID != null">
+        #{UID,jdbcType=VARCHAR},
       </if>
-      <if test="joinTime != null">
-        #{joinTime,jdbcType=VARCHAR},
+      <if test="JOIN_TIME != null">
+        #{JOIN_TIME,jdbcType=VARCHAR},
       </if>
-      <if test="leaveTime != null">
-        #{leaveTime,jdbcType=VARCHAR},
+      <if test="LEAVE_TIME != null">
+        #{LEAVE_TIME,jdbcType=VARCHAR},
       </if>
-      <if test="duration != null">
-        #{duration,jdbcType=VARCHAR},
+      <if test="DURATION != null">
+        #{DURATION,jdbcType=VARCHAR},
       </if>
-      <if test="ip != null">
-        #{ip,jdbcType=VARCHAR},
+      <if test="IP != null">
+        #{IP,jdbcType=VARCHAR},
       </if>
-      <if test="platform != null">
-        #{platform,jdbcType=VARCHAR},
+      <if test="PLATFORM != null">
+        #{PLATFORM,jdbcType=VARCHAR},
       </if>
-      <if test="area != null">
-        #{area,jdbcType=VARCHAR},
+      <if test="AREA != null">
+        #{AREA,jdbcType=VARCHAR},
       </if>
-      <if test="createdAt != null">
-        #{createdAt,jdbcType=VARCHAR},
+      <if test="CREATED_AT != null">
+        #{CREATED_AT,jdbcType=VARCHAR},
       </if>
-      <if test="webinarStartTime != null">
-        #{webinarStartTime,jdbcType=VARCHAR},
+      <if test="WEBINAR_START_TIME != null">
+        #{WEBINAR_START_TIME,jdbcType=VARCHAR},
       </if>
-      <if test="inviteUid != null">
-        #{inviteUid,jdbcType=VARCHAR},
+      <if test="INVITE_UID != null">
+        #{INVITE_UID,jdbcType=VARCHAR},
       </if>
-      <if test="inviteNickname != null">
-        #{inviteNickname,jdbcType=VARCHAR},
+      <if test="INVITE_NICKNAME != null">
+        #{INVITE_NICKNAME,jdbcType=VARCHAR},
       </if>
-      <if test="nickname != null">
-        #{nickname,jdbcType=VARCHAR},
+      <if test="NICKNAME != null">
+        #{NICKNAME,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
+      <if test="PHONE != null">
+        #{PHONE,jdbcType=VARCHAR},
       </if>
-      <if test="originUniqueId != null">
-        #{originUniqueId,jdbcType=VARCHAR},
+      <if test="ORIGIN_UNIQUE_ID != null">
+        #{ORIGIN_UNIQUE_ID,jdbcType=VARCHAR},
       </if>
-      <if test="total != null">
-        #{total,jdbcType=VARCHAR},
+      <if test="TOTAL != null">
+        #{TOTAL,jdbcType=VARCHAR},
       </if>
-      <if test="apiType != null">
-        #{apiType,jdbcType=VARCHAR},
+      <if test="API_TYPE != null">
+        #{API_TYPE,jdbcType=VARCHAR},
       </if>
-      <if test="datacenterInsertTime != null">
-        #{datacenterInsertTime,jdbcType=TIMESTAMP},
+      <if test="DATACENTER_INSERT_TIME != null">
+        #{DATACENTER_INSERT_TIME,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
