@@ -67,7 +67,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
             //换行
             topLevelClass.addJavaDocLine(lineSeparator);
 
-            topLevelClass.addJavaDocLine("@ApiModel(value=\"" + remarks + "\")" + lineSeparator + "@Data");
+            topLevelClass.addJavaDocLine("@ApiModel(value=\"" + remarks + "\")" + lineSeparator + "@Data" + lineSeparator + "@ToString");
         }
     }
 
@@ -104,6 +104,12 @@ public class CommentGenerator extends DefaultCommentGenerator {
         field.addJavaDocLine(" */");
     }
 
+    /**
+     * Description: 实体类里的 一系列 import
+     * @author: JiuDD
+     * @param compilationUnit
+     * date: 2021/11/25 17:42
+     */
     @Override
     public void addJavaFileComment(CompilationUnit compilationUnit) {
         super.addJavaFileComment(compilationUnit);
@@ -111,16 +117,15 @@ public class CommentGenerator extends DefaultCommentGenerator {
         String fullyQualifiedName = compilationUnit.getType().getFullyQualifiedName();
         boolean contains1 = fullyQualifiedName.contains(MAPPER_SUFFIX);
         boolean contains2 = fullyQualifiedName.contains(EXAMPLE_SUFFIX);
-        //实体类上的注释
+        //实体类上的注解需要的依赖包(排除掉 Example文件 和 Mapper文件，剩下的就是 实体类)
         if(!contains1 && !contains2){
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_FULL_CLASS_NAME));
-        }
-        if(!contains1 && !contains2){
+
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_DATA));
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_ToString));
         }
 
-        //字段上的注释：io.swagger.annotations.ApiModelProperty
+        //字段上的注释需要的依赖包：io.swagger.annotations.ApiModelProperty
         if(!contains1 && !contains2){
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_PROPERTY_FULL_CLASS_NAME));
         }
