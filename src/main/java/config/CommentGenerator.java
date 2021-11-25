@@ -19,7 +19,9 @@ public class CommentGenerator extends DefaultCommentGenerator {
     //实体类上的注释：io.swagger.annotations.ApiModel
     private static final String API_MODEL_FULL_CLASS_NAME="io.swagger.annotations.ApiModel";
     //实体类上的注释：lombok
-    private static final String API_MODEL_LOMBOK="lombok.Data";
+    private static final String API_MODEL_LOMBOK_DATA ="lombok.Data";
+    private static final String API_MODEL_LOMBOK_ToString="lombok.ToString";
+
     //字段上的注释：io.swagger.annotations.ApiModelProperty
     private static final String API_MODEL_PROPERTY_FULL_CLASS_NAME="io.swagger.annotations.ApiModelProperty";
 
@@ -114,7 +116,8 @@ public class CommentGenerator extends DefaultCommentGenerator {
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_FULL_CLASS_NAME));
         }
         if(!contains1 && !contains2){
-            compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK));
+            compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_DATA));
+            compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_ToString));
         }
 
         //字段上的注释：io.swagger.annotations.ApiModelProperty
