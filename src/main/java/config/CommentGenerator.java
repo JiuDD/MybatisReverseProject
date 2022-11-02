@@ -21,6 +21,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     //实体类上的注释：lombok
     private static final String API_MODEL_LOMBOK_DATA ="lombok.Data";
     private static final String API_MODEL_LOMBOK_ToString="lombok.ToString";
+    private static final String API_MODEL_LOMBOK_EXPERIMENTAL_ACCESSORS="lombok.experimental.Accessors";
 
     //字段上的注释：io.swagger.annotations.ApiModelProperty
     private static final String API_MODEL_PROPERTY_FULL_CLASS_NAME="io.swagger.annotations.ApiModelProperty";
@@ -67,7 +68,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
             //换行
             topLevelClass.addJavaDocLine(lineSeparator);
 
-            topLevelClass.addJavaDocLine("@ApiModel(value=\"" + remarks + "\")" + lineSeparator + "@Data" + lineSeparator + "@ToString");
+            topLevelClass.addJavaDocLine("@ApiModel(value=\"" + remarks + "\")" + lineSeparator + "@Accessors(chain = true)" + lineSeparator + "@Data" + lineSeparator + "@ToString");
         }
     }
 
@@ -123,6 +124,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
 
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_DATA));
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_ToString));
+            compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_LOMBOK_EXPERIMENTAL_ACCESSORS));
         }
 
         //字段上的注释需要的依赖包：io.swagger.annotations.ApiModelProperty
