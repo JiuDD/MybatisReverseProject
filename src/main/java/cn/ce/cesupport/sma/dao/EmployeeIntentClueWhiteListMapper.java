@@ -5,7 +5,7 @@ import cn.ce.cesupport.sma.entity.EmployeeIntentClueWhiteListExample;
 import java.util.List;
 
 public interface EmployeeIntentClueWhiteListMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(EmployeeIntentClueWhiteList record);
 
@@ -13,7 +13,7 @@ public interface EmployeeIntentClueWhiteListMapper {
 
     List<EmployeeIntentClueWhiteList> selectByExample(EmployeeIntentClueWhiteListExample example);
 
-    EmployeeIntentClueWhiteList selectByPrimaryKey(String id);
+    EmployeeIntentClueWhiteList selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(EmployeeIntentClueWhiteList record);
 

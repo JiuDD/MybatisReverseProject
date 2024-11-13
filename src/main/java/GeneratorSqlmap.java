@@ -27,7 +27,10 @@ public class GeneratorSqlmap {
         //当生成的代码重复时，覆盖原代码
         boolean overwrite = true;
         //读取我们的 MBG 配置文件 逆向工程配置文件
+        //Windows系统
         File configFile = new File("src\\main\\resources\\generator.xml");
+        //Mac系统
+        configFile = new File("src/main/resources/generator.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
 

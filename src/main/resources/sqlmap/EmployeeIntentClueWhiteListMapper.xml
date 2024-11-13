@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.ce.cesupport.sma.dao.EmployeeIntentClueWhiteListMapper">
   <resultMap id="BaseResultMap" type="cn.ce.cesupport.sma.entity.EmployeeIntentClueWhiteList">
-    <id column="id" jdbcType="VARCHAR" property="id" />
+    <id column="id" jdbcType="INTEGER" property="id" />
     <result column="emp_id" jdbcType="VARCHAR" property="empId" />
     <result column="org_type" jdbcType="TINYINT" property="orgType" />
   </resultMap>
@@ -53,20 +53,20 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from employee_intent_clue_white_list
-    where id = #{id,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from employee_intent_clue_white_list
-    where id = #{id,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.ce.cesupport.sma.entity.EmployeeIntentClueWhiteList">
     insert into employee_intent_clue_white_list (id, emp_id, org_type
       )
-    values (#{id,jdbcType=VARCHAR}, #{empId,jdbcType=VARCHAR}, #{orgType,jdbcType=TINYINT}
+    values (#{id,jdbcType=INTEGER}, #{empId,jdbcType=VARCHAR}, #{orgType,jdbcType=TINYINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.ce.cesupport.sma.entity.EmployeeIntentClueWhiteList">
@@ -84,7 +84,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=VARCHAR},
+        #{id,jdbcType=INTEGER},
       </if>
       <if test="empId != null">
         #{empId,jdbcType=VARCHAR},
@@ -104,12 +104,12 @@
         org_type = #{orgType,jdbcType=TINYINT},
       </if>
     </set>
-    where id = #{id,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.ce.cesupport.sma.entity.EmployeeIntentClueWhiteList">
     update employee_intent_clue_white_list
     set emp_id = #{empId,jdbcType=VARCHAR},
       org_type = #{orgType,jdbcType=TINYINT}
-    where id = #{id,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

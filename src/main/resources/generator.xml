@@ -40,7 +40,8 @@
 
 
         <!--实体类定义-->
-        <javaModelGenerator targetPackage="${model_target_package}" targetProject=".\src\main\java">
+        <!--windows下路径用\，mac下路径用/-->
+        <javaModelGenerator targetPackage="${model_target_package}" targetProject="./src/main/java">
             <!--是否对model添加构造函数-->
             <property name="constructorBased" value="false"/>
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
@@ -55,14 +56,16 @@
 
         <!--1、传统的xml类型的mapper接口         1、2选其一即可 -->
         <!--xml格式的mapper文件位置定义-->
-        <sqlMapGenerator targetPackage="sqlmap" targetProject=".\src\main\resources">
+        <!--windows下路径用\，mac下路径用/-->
+        <sqlMapGenerator targetPackage="sqlmap" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!--生成xml的mapper文件-->
         <!--    type="ANNOTATEDMAPPER", 生成Java Model和基于注解的Mapper对象
                 type="MIXEDMAPPER", 生成基于注解的Java Model和相应的Mapper对象
                 type="XMLMAPPER", 生成SQLMap XML文件和独立的Mapper接口            -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="${mapper_target_package}" targetProject=".\src\main\java">
+        <!--windows下路径用\，mac下路径用/-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${mapper_target_package}" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
